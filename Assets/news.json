@@ -1,0 +1,30 @@
+[
+  {
+    "category": "LATEST",
+    "title": "เปิดให้เล่นแพตช์ใหม่แล้ววันนี้",
+    "date": "2026/08/10",
+    "image": "news.png",
+    "url": "https://example.com/news/patch-latest"
+  },
+  {
+    "category": "EVENT",
+    "title": "อีเวนต์พิเศษประจำเดือน เริ่มแล้ว",
+    "date": "2026/08/05",
+    "image": "news.png",
+    "url": "https://example.com/news/event"
+  },
+  {
+    "category": "NOTICE",
+    "title": "ประกาศปรับปรุงระบบล็อกอิน",
+    "date": "2026/07/28",
+    "image": "",
+    "url": ""
+  },
+  {
+    "category": "MAINTENANCE",
+    "title": "แจ้งปิดปรับปรุงเซิร์ฟเวอร์ชั่วคราว",
+    "date": "2026/07/20",
+    "image": "",
+    "url": ""
+  }
+]
