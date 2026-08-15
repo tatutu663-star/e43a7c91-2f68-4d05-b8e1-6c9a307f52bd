@@ -1,0 +1,16 @@
+# ไฟล์นี้ commit ตรงเข้า repo แล้วเข้าถึงผ่าน raw.githubusercontent.com/.../latest.yml
+# (ตาม url ที่ตั้งไว้ใน app-update.yml) ส่วน "path" ด้านล่างเป็น URL เต็มที่ชี้ไปยัง
+# ไฟล์ GameLauncherSetup.exe ที่แนบไว้ใน GitHub Releases ของ repo เดียวกัน (ไม่ใช่ commit ไฟล์ .exe
+# เข้า repo ตรงๆ เพราะ GitHub จำกัดไฟล์ในระบบ git ปกติไว้ที่ 100MB ต่อไฟล์)
+#
+# เวลาจะออก Launcher เวอร์ชันใหม่:
+#   1. แก้เลข <Version> ใน GameLauncher.csproj และ MyAppVersion ใน Installer/setup.iss แล้ว build ใหม่
+#      ได้ GameLauncherSetup.exe ตัวใหม่
+#   2. ไปที่ GitHub repo > Releases > Draft a new release > ตั้ง tag ใหม่ (เช่น v1.0.2)
+#      แล้วแนบไฟล์ GameLauncherSetup.exe ตัวใหม่ > Publish release
+#   3. แก้เลข version และ path (URL ของ release ใหม่) ในไฟล์นี้ให้ตรงกัน แล้ว commit + push ทับ latest.yml เดิม
+#   4. Launcher ของผู้เล่นทุกคนจะเช็กเจอเวอร์ชันใหม่และอัปเดตตัวเองอัตโนมัติ
+
+version: 1.0.1
+path: https://github.com/tatutu663-star/e43a7c91-2f68-4d05-b8e1-6c9a307f52bd/releases/download/v1.0.1/GameLauncherSetup.exe
+releaseDate: 2026-08-15
