@@ -1,25 +1,25 @@
 {
   "version": "1.0.1",
   "patchUrl": "https://github.com/tatutu663-star/e43a7c91-2f68-4d05-b8e1-6c9a307f52bd/releases/download/v1.0.1/patch_1.0.1.zip",
-  "patchSizeBytes": 524288000,
+  "patchSizeBytes": 79526925,
   "news": [
     {
-      "title": "โอเป็นเกย์",
+      "title": "test1",
       "date": "2026/08/13",
       "category": "latest"
     },
     {
-      "title": "10100",
+      "title": "test1",
       "date": "2026/08/10",
       "category": "event"
     },
     {
-      "title": "00000...",
+      "title": "test2",
       "date": "2026/07/27",
       "category": "latest"
     },
     {
-      "title": "หน้าหี",
+      "title": "test1",
       "date": "2026/08/01",
       "category": "contest"
     }
