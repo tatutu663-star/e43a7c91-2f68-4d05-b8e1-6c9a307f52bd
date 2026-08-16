@@ -11,6 +11,6 @@
 #   3. แก้เลข version และ path (URL ของ release ใหม่) ในไฟล์นี้ให้ตรงกัน แล้ว commit + push ทับ latest.yml เดิม
 #   4. Launcher ของผู้เล่นทุกคนจะเช็กเจอเวอร์ชันใหม่และอัปเดตตัวเองอัตโนมัติ
 
-version: 1.0.1
+version: 0.1.0
 path: https://github.com/tatutu663-star/e43a7c91-2f68-4d05-b8e1-6c9a307f52bd/releases/download/v1.0.1/GameLauncherSetup.exe
 releaseDate: 2026-08-15
