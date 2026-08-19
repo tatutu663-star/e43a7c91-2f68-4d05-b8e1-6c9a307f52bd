@@ -4,5 +4,5 @@
   "PatchManifestUrl": "https://raw.githubusercontent.com/tatutu663-star/e43a7c91-2f68-4d05-b8e1-6c9a307f52bd/refs/heads/main/version.json",
   "LocalVersionFile": "game_version.txt",
   "VersionLabelPrefix": "Game Version:",
-  "SelfUpdateUrl": "https://raw.githubusercontent.com/tatutu663-star/e43a7c91-2f68-4d05-b8e1-6c9a307f52bd/refs/heads/main"
+  "SelfUpdateUrl": "https://raw.githubusercontent.com/tatutu663-star/e43a7c91-2f68-4d05-b8e1-6c9a307f52bd/refs/heads/main/latest.yml"
 }
