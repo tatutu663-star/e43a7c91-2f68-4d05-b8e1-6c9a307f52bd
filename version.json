@@ -5,22 +5,22 @@
   "news": [
     {
       "title": "กำลัง test อยู่",
-      "date": "2026/08/13",
+      "date": "2026/08/19",
       "category": "latest"
     },
     {
       "title": "test1",
-      "date": "2026/08/10",
+      "date": "2026/--/--",
       "category": "event"
     },
     {
-      "title": "test2",
-      "date": "2026/07/27",
+      "title": "test",
+      "date": "2026/--/--",
       "category": "latest"
     },
     {
       "title": "test1",
-      "date": "2026/08/01",
+      "date": "2026/--/--",
       "category": "contest"
     }
   ]
