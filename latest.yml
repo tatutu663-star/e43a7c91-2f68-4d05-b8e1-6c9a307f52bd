@@ -1,3 +1,27 @@
-version: 1.0.0
-path: https://github.com/tatutu663-star/e43a7c91-2f68-4d05-b8e1-6c9a307f52bd/releases/download/v1.0.1/GameLauncherSetup.exe
+# ไฟล์นี้ commit ตรงเข้า repo แล้วเข้าถึงผ่าน raw.githubusercontent.com/.../latest.yml
+# (ตาม SelfUpdateUrl ที่ตั้งไว้ใน launcher-config.json — ตอนนี้ตั้งเป็น URL เต็มที่ชี้ไปไฟล์นี้ตรงๆ อยู่แล้ว)
+#
+# "path" ด้านล่างเป็น URL เต็มที่ชี้ไปยังไฟล์ .zip ที่แนบไว้ใน GitHub Releases ของ repo เดียวกัน
+# (ไม่ใช่ commit ไฟล์ .zip เข้า repo ตรงๆ เพราะ GitHub จำกัดไฟล์ในระบบ git ปกติไว้ที่ 100MB ต่อไฟล์)
+#
+# *** สำคัญ: ตอนนี้ตัว Launcher อัปเดตตัวเองด้วยวิธี "แตกไฟล์ทับของเก่าไปเลย" (extract-overwrite)
+#     ไม่ใช่การรันตัวติดตั้ง Setup.exe อีกต่อไป ดังนั้น .zip ที่แนบต้องเป็นไฟล์ผลลัพธ์จาก
+#     `dotnet publish` ล้วนๆ (GameLauncher.exe, .dll ต่างๆ, launcher-config.json, Resources ฯลฯ)
+#     ไม่ใช่ GameLauncherSetup.exe (Setup.exe ยังใช้ได้อยู่ แต่ใช้แค่ตอนแจกให้ผู้เล่นติดตั้งครั้งแรกเท่านั้น
+#     ดู Installer/setup.iss) ***
+#
+# เวลาจะออก Launcher เวอร์ชันใหม่:
+#   1. แก้เลข <Version>/<AssemblyVersion>/<FileVersion> ใน GameLauncher.csproj แล้ว
+#      `dotnet publish -c Release -r win-x64 --self-contained false -p:PublishSingleFile=false`
+#      จะได้โฟลเดอร์ publish/ ใหม่
+#   2. บีบอัดเนื้อหา "ข้างใน" โฟลเดอร์ publish/ (ไฟล์อยู่ที่ root ของ zip ตรงๆ ไม่ต้องห่อโฟลเดอร์ครอบอีกชั้น
+#      แต่ถ้าห่อมาก็ไม่เป็นไร โค้ดตัดโฟลเดอร์ห่อชั้นนอกสุดออกให้อัตโนมัติ) เป็น GameLauncher_1.0.2.zip
+#   3. ไปที่ GitHub repo > Releases > Draft a new release > ตั้ง tag ใหม่ (เช่น v1.0.2)
+#      แล้วแนบไฟล์ GameLauncher_1.0.2.zip > Publish release
+#   4. แก้เลข version และ path (URL ของ release ใหม่) ในไฟล์นี้ให้ตรงกัน แล้ว commit + push ทับ latest.yml เดิม
+#   5. Launcher ของผู้เล่นทุกคนจะเช็กเจอเวอร์ชันใหม่ภายใน 5 วินาทีถัดไป (ถ้าเปิดค้างอยู่) หรือทันทีตอน
+#      เปิดโปรแกรมใหม่ แล้วดาวน์โหลด+แตกไฟล์ทับของเก่า+เปิด Launcher เวอร์ชันใหม่ให้เองอัตโนมัติ
+
+version: 1.0.2
+path: https://github.com/tatutu663-star/e43a7c91-2f68-4d05-b8e1-6c9a307f52bd/releases/download/v1.0.2/GameLauncher_1.0.2.zip
 releaseDate: 2026-08-20
