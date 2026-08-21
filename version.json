@@ -1,10 +1,10 @@
 {
-  "version": "1.0.1",
+  "version": "1.0.0",
   "patchUrl": "https://github.com/tatutu663-star/e43a7c91-2f68-4d05-b8e1-6c9a307f52bd/releases/download/v1.0.1/patch_1.0.1.zip",
-  "patchSizeBytes": 111881859,
+  "patchSizeBytes": 72223492,
   "news": [
     {
-      "title": " test อยู่",
+      "title": "test อยู่",
       "date": "2026/08/19",
       "category": "latest"
     },
