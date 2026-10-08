@@ -1,0 +1,57 @@
+name: Publish manifest from Releases
+
+# ทำงานเมื่อ: เผยแพร่/แก้/ลบ Release, แก้ข่าว-สถานะ, หรือกดรันเอง
+on:
+  release:
+    types: [published, edited, deleted]
+  push:
+    branches: [main]
+    paths: ["site/**", "delete.txt"]
+  workflow_dispatch:
+
+permissions:
+  contents: read    # อ่านรายการ Release
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install cryptography requests
+
+      - name: Build manifest from releases + sign
+        env:
+          SIGNING_KEY: ${{ secrets.SIGNING_KEY }}
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          OWNER="${GITHUB_REPOSITORY_OWNER,,}"
+          NAME="${GITHUB_REPOSITORY#*/}"
+          python tools/build_content.py --site-dir site --out dist \
+            --prev-base "https://${OWNER}.github.io/${NAME}/"
+
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist/site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
